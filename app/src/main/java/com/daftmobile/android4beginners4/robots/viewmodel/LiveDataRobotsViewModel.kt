@@ -17,4 +17,8 @@ class LiveDataRobotsViewModel: RobotsViewModel, ViewModel() {
         mutableList.add(RobotGenerator.generate())//tworzymy losowego robta
         mutableLiveData.value = mutableList//wrzycamy nowa liste jako now wartosc
     }
+
+    override fun sortRobots(dir: Boolean) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }

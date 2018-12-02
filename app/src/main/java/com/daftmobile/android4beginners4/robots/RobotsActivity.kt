@@ -10,6 +10,9 @@ import com.daftmobile.android4beginners4.robots.viewmodel.ExternalSourceRobotsVi
 import com.daftmobile.android4beginners4.robots.viewmodel.LiveDataRobotsViewModel
 import com.daftmobile.android4beginners4.robots.viewmodel.RobotsViewModel
 import kotlinx.android.synthetic.main.activity_robots.*
+import android.view.MenuInflater
+
+
 class RobotsActivity : AppCompatActivity() {
     private lateinit var viewModel: RobotsViewModel
 
@@ -31,13 +34,24 @@ class RobotsActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.robots_menu,menu)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.robots_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        //when(item.Itemid)
-        return super.onOptionsItemSelected(item)
+        return when(item?.itemId) {
+            R.id.rosnaco -> {
+                viewModel.sortRobots(true)
+                true
+            }
+
+            R.id.malejaco -> {
+                viewModel.sortRobots(false)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun addNewItem() {

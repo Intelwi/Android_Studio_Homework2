@@ -15,6 +15,13 @@ class ExternalSourceRobotsViewModel: ViewModel(), RobotsViewModel {//
     override fun addRobot() {
 
         robotDataSource.addNew()//dzieki temu mozemy kozystac z
-        mutableLiveData.value = robotDataSource.getRobots().toString()//
+        mutableLiveData.value = robotDataSource.getRobots().joinToString("\n")
+    }
+
+    override fun sortRobots(dir: Boolean){
+        robotDataSource.sortRobots(dir)
+        mutableLiveData.value = robotDataSource.getRobots().joinToString("\n")
+
     }
 }
+

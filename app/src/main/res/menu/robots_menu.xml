@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/file"
         android:title="@string/sort_action"
-        android:icon="@drawable/ic_sort_black_24dp">
+        android:icon="@drawable/ic_sort_black_24dp"
+        app:showAsAction="ifRoom">
         <!-- -->
         <menu>
             <item android:id="@+id/rosnaco"
